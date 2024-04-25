@@ -1,0 +1,6 @@
+@Labb_3_API_v2_HostAddress = http://localhost:5178
+
+GET {{Labb_3_API_v2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
