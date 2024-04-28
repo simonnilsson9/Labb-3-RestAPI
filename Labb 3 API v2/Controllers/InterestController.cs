@@ -33,7 +33,7 @@ namespace Labb_3_API_v2.Controllers
             
         }
 
-        [HttpPut("AddPerson")]
+        [HttpPut("UpdatePersonInterest")]
         public async Task<IActionResult> UpdatePersonInterest(int interestId, int personId)
         {
             try

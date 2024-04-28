@@ -114,48 +114,48 @@ namespace Labb_3_API_v2.Controllers
             
         }
 
-        [HttpPut("{id:int}/{name}/{phone}")]
-        public async Task<IActionResult> UpdatePerson(int id, string name, string phone)
-        {
-            try
-            {
-                var result = await _personRepo.GetById(id);
-                if (result != null)
-                {
-                    Person updatedPerson = new Person { PersonId = id, Name = name, Phone = phone };
-                    await _personRepo.Update(updatedPerson);
-                    return Ok(updatedPerson);
-                }
-                return NotFound();
-            }
-            catch (Exception)
-            {
+        //[HttpPut("{id:int}/{name}/{phone}")]
+        //public async Task<IActionResult> UpdatePerson(int id, string name, string phone)
+        //{
+        //    try
+        //    {
+        //        var result = await _personRepo.GetById(id);
+        //        if (result != null)
+        //        {
+        //            Person updatedPerson = new Person { PersonId = id, Name = name, Phone = phone };
+        //            await _personRepo.Update(updatedPerson);
+        //            return Ok(updatedPerson);
+        //        }
+        //        return NotFound();
+        //    }
+        //    catch (Exception)
+        //    {
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error to update data");
-            }
+        //        return StatusCode(StatusCodes.Status500InternalServerError, "Error to update data");
+        //    }
             
-        }
+        //}
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            try
-            {
-                var result = await _personRepo.GetById(id);
-                if (result != null)
-                {
-                    await _personRepo.Delete(result);
-                    return Ok(result);
-                }
-                return NotFound();
-            }
-            catch (Exception)
-            {
+        //[HttpDelete("{id}")]
+        //public async Task<IActionResult> Delete(int id)
+        //{
+        //    try
+        //    {
+        //        var result = await _personRepo.GetById(id);
+        //        if (result != null)
+        //        {
+        //            await _personRepo.Delete(result);
+        //            return Ok(result);
+        //        }
+        //        return NotFound();
+        //    }
+        //    catch (Exception)
+        //    {
 
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error to delete data");
-            }
+        //        return StatusCode(StatusCodes.Status500InternalServerError, "Error to delete data");
+        //    }
             
-        }
+        //}
 
         [HttpPost]
         public async Task<IActionResult> CreateNewPerson(Person newPerson)
